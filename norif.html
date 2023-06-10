@@ -14,28 +14,19 @@
 <body>
 
     <script>
-        document.getElementById("button").addEventListener("click", () => {
-            Notification.requestPermission().then(perm => {
-                alert(perm)
-                if(perm == 'denied')
-                {
-                    new Notification("Example Notif", {
-                        body : "this is more text",
-                        // icon : "F:\\Python works\\ChatBox\\inner border effect\\util.png",
-                        tag : "util"
-                    })
-                }
-                else
-                {
-                    new Notification("Example Notif", {
-                        body : "this is more text",
-                        // icon : "F:\\Python works\\ChatBox\\inner border effect\\util.png",
-                        tag : "util"
-                    })
-                }
-            })
-            
-        })
+  document.getElementById("button").addEventListener("click", () => {
+  Notification.requestPermission().then(perm => {
+    alert(perm);
+    if (perm == 'granted') {
+      new Notification("Example Notif", {
+        body: "This is more text",
+        // icon: "F:\\Python works\\ChatBox\\inner border effect\\util.png",
+        tag: "util"
+      });
+    }
+  });
+});
+
 
     </script>
 </body>
