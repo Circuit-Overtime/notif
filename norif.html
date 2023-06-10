@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button id="button"> Click me</button>
+<body>
+    <script>
+        // Check if the browser supports notifications
+if ('Notification' in window) {
+  // Request permission for notifications
+  Notification.requestPermission().then(function (permission) {
+    if (permission === 'granted') {
+      // Create a new notification
+      var notification = new Notification('Hello!', {
+        body: 'This is a notification.',
+        // icon: 'path/to/notification-icon.png' // Replace with your own icon
+      });
+
+      // Handle click event on the notification
+      notification.onclick = function () {
+        // Perform an action when the notification is clicked
+        console.log('Notification clicked!');
+      };
+    }
+  });
+}
+if ('notifications' in window == false)
+{
+    Notification.requestPermission()
+}
+
+
+
+
+    </script>
+</body>
+</html>
